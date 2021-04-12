@@ -23,7 +23,7 @@ export default function () {
       })
       traverse(ast, {
         ExportDefaultDeclaration: path => {
-          data = path.node.declaration |> astToLiteral
+          data = path.node.declartion?astToLiteral(path.node.declaration):path.node.declaration
         },
       })
     }
